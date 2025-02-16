@@ -1,6 +1,6 @@
 [build]
-  command = "bun src/index.ts"
-  publish = "dist"
+command = "bun build src/index.ts --outdir dist"
+publish = "dist"
 
 [context.production]
   environment = { NODE_VERSION = "18" }
