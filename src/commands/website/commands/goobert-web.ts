@@ -1,7 +1,7 @@
 export default {
 	name: "goobert-website",
 	description: "Get the Goobert website link!",
-	category: "information",
+	category: "Server",
 	run: async ({ interaction }: ICommandOptions) => {
 		await interaction.reply({
 			embeds: [

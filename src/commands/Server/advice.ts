@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 export default {
     name: "advice",
     description: "Get a piece of AI-generated advice!",
-    category: "infomation",
+    category: "Server",
     run: async ({ interaction }: ICommandOptions) => {
         try {
             const response = await fetch("https://api.adviceslip.com/advice");

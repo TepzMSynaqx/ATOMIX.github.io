@@ -1,0 +1,218 @@
+/* Modern, cool styling for Goobert Web with light/dark mode */
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #6c6c6c;
+    --card-bg: white;
+    --header-gradient: linear-gradient(135deg, #c5c5c5, #ffffff, #c5c5c5);
+    --heading-color: #6c6c6c;
+    --border-color: #6c6c6c;
+    --shadow-color: rgba(0,0,0,0.1);
+    --link-color: #6c6c6c;
+    --link-hover: #000000;
+    --nav-bg: #d9d8d8;
+    --nav-hover: #ffffff;
+    --footer-bg: #d9d8d8;
+    --transition-speed: 0.5s;
+}
+  
+.dark-mode {
+    --bg-color: #1f2937;
+    --text-color: #e5e7eb;
+    --card-bg: #374151;
+    --header-gradient: linear-gradient(135deg, #29374a, #425a77, #29374a);
+    --heading-color: #e5e7eb;
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0,0,0,0.3);
+    --link-color: #e5e7eb;
+    --link-hover: #000000;
+    --nav-bg: #29374a;
+    --nav-hover: #ffffff;
+    --footer-bg: #29374a;
+}
+  
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) ease, 
+                color var(--transition-speed) ease;
+}
+  
+header {
+    background: var(--header-gradient);
+    color: var(--text-color);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: background var(--transition-speed) ease;
+    position: relative;
+}
+  
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+  
+/* Theme toggle button */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 50px;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+  
+.theme-toggle:hover {
+    background: rgba(0,0,0,0.1);
+}
+  
+.theme-toggle i {
+    font-size: 1rem;
+}
+  
+/* Use Font Awesome icons */
+.theme-toggle .light-icon {
+    display: none;
+}
+  
+.dark-mode .theme-toggle .dark-icon {
+    display: none;
+}
+  
+.dark-mode .theme-toggle .light-icon {
+    display: inline;
+}
+  
+nav {
+    background-color: var(--nav-bg);
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease;
+}
+  
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+  
+nav a:hover {
+    background-color: var(--nav-hover);
+}
+  
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    margin-bottom: 5rem; /* For fixed footer */
+}
+  
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease,
+                background-color var(--transition-speed) ease;
+}
+  
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+  
+h2 {
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    transition: color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease;
+}
+  
+ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+  
+li {
+    margin-bottom: 0.5rem;
+}
+  
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+  
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow var(--transition-speed) ease;
+}
+  
+img:hover {
+    transform: scale(1.03);
+}
+  
+footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 10px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease;
+}
+  
+/* Add animation for page elements */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  
+.card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+  
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+  
+.card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+  
+.card:nth-child(4) {
+    animation-delay: 0.6s;
+}

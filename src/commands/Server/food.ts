@@ -3,7 +3,7 @@ import { join } from "path";
 export default {
     name: "food-goobert",
     description: "Shows a yummy GIF!",
-    category: "information",
+    category: "Server",
     run: async ({ interaction }: ICommandOptions) => {
         const gifPath = join(__dirname, "../website/image/cat-eat.gif");
 

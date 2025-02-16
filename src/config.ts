@@ -1,6 +1,6 @@
 import type { NodeOptions } from "sakulink";
 
-export const token: string = "MTMzOTk2NTQ0ODc3MDU1NTk0NQ.G4V7dr.xoqG4FrhA2yLYaSdMIxHI016AprhvBKFOLn8G0";
+export const token: string = "MTMzOTk2NTQ0ODc3MDU1NTk0NQ.GwB0dS.IgLTp1wh-Oj_Ax9Vsg48thRGWTjB4sfroUBpKc";
 export const nodes: NodeOptions[] = [
 	{
 		identifier: "OTARI TH",
